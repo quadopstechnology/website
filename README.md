@@ -93,7 +93,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 Build the optimized Next.js static production bundle:
 
 ```bash
-npm run build
+npm run build 
 ```
 
 ### 4. Running Production Server
