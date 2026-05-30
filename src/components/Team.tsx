@@ -94,12 +94,12 @@ export default function Team() {
               className="group bg-surface border border-outline-variant/30 hover:border-tertiary/40 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-tertiary/5 relative overflow-hidden h-full min-h-[420px]"
             >
               {/* Subtle top-right decorative gradient glow */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-tertiary/10 to-transparent rounded-bl-full pointer-events-none group-hover:scale-125 transition-transform duration-500" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-linear-to-br from-tertiary/10 to-transparent rounded-bl-full pointer-events-none group-hover:scale-125 transition-transform duration-500" />
 
               <div className="flex flex-col items-center text-center">
                 {/* Avatar container with glowing ring */}
                 <div className="relative w-24 h-24 mb-4">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-tertiary to-primary rounded-full blur-[2px] opacity-0 group-hover:opacity-75 transition-opacity duration-300 scale-105" />
+                  <div className="absolute inset-0 bg-linear-to-tr from-tertiary to-primary rounded-full blur-[2px] opacity-0 group-hover:opacity-75 transition-opacity duration-300 scale-105" />
                   <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-outline-variant/40 group-hover:border-transparent transition-all duration-300 bg-surface">
                     <img
                       alt={member.name}
