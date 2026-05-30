@@ -8,8 +8,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
       NEXT_PUBLIC_COMPANY_EMAIL: ${{ secrets.COMPANY_EMAIL }}
       NEXT_PUBLIC_SMTP_HOST: ${{ secrets.NEXT_PUBLIC_SMTP_HOST }}
       NEXT_PUBLIC_SMTP_PORT: ${{ secrets.NEXT_PUBLIC_SMTP_PORT }}
@@ -29,30 +30,10 @@ jobs:
       - run: npm install -g vercel
 
       - name: Pull Environment
-        run: |
-          vercel pull \
-            --yes \
-            --environment=production \
-            --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Build
-        run: |
-          vercel build \
-            --prod \
-            --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: Deploy
-        run: |
-          vercel deploy \
-            --prebuilt \
-            --prod \
-            --token=${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
