@@ -1,5 +1,8 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
+	"build": {
+		"command": "npx opennextjs-cloudflare build"
+	},
 	"main": ".open-next/worker.js",
 	"name": "quadops-agency-website",
 	"compatibility_date": "2026-05-30",
