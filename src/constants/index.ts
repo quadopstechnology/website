@@ -185,7 +185,7 @@ export const TEAM: TeamMemberItem[] = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuDxLn9RJPGzr86HN1j-GCIrubffezz3SSHbbQMgm3NcWavK4bTOgawTR4aL4E_TwTfLplhUowDcxbW9nhOZPLzb4wWJTYXESVp7wqCLOGsO2D8z3hPXLkyprFT4zKmmofNVoEM-1uohcXn7l83nHDlOQYN2mdTh9Y_4L982LCWhQ5kbzJuSZIpVkMMrM2IX4oXo7DnfvtePDQKXGSQFncCsJABY4d-1Id7Sr9QZQmKO_P_dQPSMS2egHzAItrTej6PGx7tRvpDnrj0",
     badge: "Team Lead & DevOps",
     links: {
-      resume: "/resumes/Sachin_Bharbey_Resume.pdf",
+      resume: "/resumes/abhishek_kumar_resume.pdf",
       github: "#",
       linkedin: "#",
     },
@@ -198,7 +198,7 @@ export const TEAM: TeamMemberItem[] = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBBT2U88IErZ8rl7diZ-_uoQSAi7jZCurfZdh1s6nOLSndjTqIiEnD8DkUmLCPZ2EBPeoV--h2LhUm9RVyHSAWisAmEJC79OS1vcm5IuL2rIfEgc2VEG9APjFug6zfH374dKn3X7ppc-p1nUfPz4FJPKeq6d979SssEyQap14B2d_dCo4QiZgKqHPMFgANruuynsnUJFiFJDxUSlW37LLyvQewDGV9UgbVlOxYhx7RibA9Xi0alEa2z8pXKwuqvrsDfbBrqWJ2w3LU",
     badge: "Fullstack Developer",
     links: {
-      resume: "/resumes/Sachin_Bharbey_Resume.pdf",
+      resume: "/resumes/arjun_singh_resume.pdf",
       github: "#",
       linkedin: "#",
     },
@@ -211,7 +211,7 @@ export const TEAM: TeamMemberItem[] = [
       "https://lh3.googleusercontent.com/aida-public/AB6AXuA3o3v0BkRZlTOrUtrTzPaywTju4DHe-guZmJEySMgChP73n6OHPiN4CX39b-GEQj9QZ2Q3CS1A-hjF4ylv-rChh2kELGt9hD9olSy_KYIspU2wfoSpFhrTDYhuqfcIV_exdmYsXfy06_uynmsSUNlFoZTF-he6n-cup2v1fl7HCkyfijrTLMXuqljDMxx5_Nc5whNcRsx9QpJRJbt0G1G_7wqkTGTSaOY33BekBO6QjvzSEwVt5pBNt4GTPGrnh3C8KY56z7c00R0",
     badge: "SEO & Growth",
     links: {
-      resume: "/resumes/Sachin_Bharbey_Resume.pdf",
+      resume: "/resumes/aashu_sindhu_resume.pdf",
       github: "#",
       linkedin: "#",
     },
