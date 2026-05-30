@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA | Precision in Every Pixel</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#fcf8ff",
+                        "tertiary-container": "#ebe9ff",
+                        "on-background": "#1a1a2b",
+                        "secondary-fixed": "#e3e0f7",
+                        "on-tertiary": "#ffffff",
+                        "surface": "#fcf8ff",
+                        "on-surface": "#1a1a2b",
+                        "on-secondary-fixed-variant": "#464557",
+                        "primary": "#5f5c6f",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e8e6fe",
+                        "tertiary-fixed": "#e1e0ff",
+                        "secondary-container": "#e3e0f7",
+                        "on-surface-variant": "#48464c",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c9c5cc",
+                        "surface-variant": "#e2e0f8",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#c9c3da",
+                        "on-secondary-fixed": "#1a1a2a",
+                        "on-tertiary-fixed": "#07006c",
+                        "secondary-fixed-dim": "#c6c4da",
+                        "surface-container": "#efecff",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e2e0f8",
+                        "surface-bright": "#fcf8ff",
+                        "on-tertiary-fixed-variant": "#2f2ebe",
+                        "surface-dim": "#dad8ef",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#c9c3da",
+                        "tertiary": "#494bd6",
+                        "on-secondary-container": "#636375",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f5f2ff",
+                        "on-primary-fixed-variant": "#484557",
+                        "surface-tint": "#5f5c6f",
+                        "primary-container": "#eee8ff",
+                        "on-tertiary-container": "#5557e2",
+                        "primary-fixed": "#e5dff6",
+                        "on-primary-fixed": "#1c1a2a",
+                        "inverse-on-surface": "#f2efff",
+                        "inverse-surface": "#2f2f41",
+                        "tertiary-fixed-dim": "#c0c1ff",
+                        "on-primary-container": "#6b677b",
+                        "secondary": "#5d5d6f",
+                        "outline": "#79767d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "16px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "section-mobile": "64px",
+                        "section-desktop": "120px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ambient-card {
+            box-shadow: 0 4px 20px rgba(238, 232, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .ambient-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(238, 232, 255, 0.4);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #eee8ff 0%, #ffffff 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-base max-w-[1280px] left-1/2 -translate-x-1/2 bg-surface/80 backdrop-blur-md">
+<div class="font-headline-sm text-headline-sm font-bold tracking-tighter text-on-surface">AURA</div>
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="text-tertiary font-bold border-b-2 border-tertiary pb-1 font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-tertiary transition-colors duration-300 font-label-md text-label-md" href="#">Services</a>
+<a class="text-on-surface-variant font-medium hover:text-tertiary transition-colors duration-300 font-label-md text-label-md" href="#">Portfolio</a>
+<a class="text-on-surface-variant font-medium hover:text-tertiary transition-colors duration-300 font-label-md text-label-md" href="#">About</a>
+<a class="text-on-surface-variant font-medium hover:text-tertiary transition-colors duration-300 font-label-md text-label-md" href="#">Contact</a>
+</nav>
+<button class="bg-on-background text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:bg-tertiary transition-all scale-95 active:opacity-80">
+            Let's Talk
+        </button>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="hero-gradient pt-40 pb-section-desktop px-margin-mobile md:px-margin-desktop">
+<div class="max-w-[1280px] mx-auto grid md:grid-cols-2 items-center gap-12">
+<div class="space-y-8">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight">
+                        Powered by Innovation<br/>
+                        Cutting-edge Skills.<br/>
+                        People-first Approach.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        We bridge the gap between complex technology and human-centric design, delivering digital products that propel ambitious startups toward market dominance.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="bg-on-background text-on-primary px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-tertiary transition-all">
+                            Get a Free Consultation
+                        </button>
+<button class="border-2 border-outline-variant text-on-surface px-8 py-4 rounded-xl font-label-md text-label-md hover:bg-surface-variant transition-all">
+                            View our Services
+                        </button>
+</div>
+</div>
+<div class="hidden md:block relative">
+<div class="w-full aspect-square rounded-3xl bg-primary-container overflow-hidden ambient-card">
+<img class="w-full h-full object-cover" data-alt="A sophisticated 3D abstract digital sculpture representing fluid innovation, using a palette of soft lavender, deep charcoal, and glowing white. The scene is illuminated with professional studio lighting, creating soft shadows and a high-end editorial aesthetic suitable for a modern tech agency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiqrjKC7hpol-mKI2i4iDm6_es1XaVGpMgBzky9pSDtPG31OOEaiW7L-5Y6X3w0o9dsXzUpzCPHzDjZGn-8LikROIqz9E-kukFq3CUzGevQLDGn_IbSnX8HUts4koQk54JLeJ8yk_sLE4TsvL11flCXE4XM9GQmJcIoPDwpCX8I9esmTTyvHt5kpExB9x_348dkiayqolx7ncspgydIvUEUOvilorqIxGNjJ6QXPtM47EUsMbAwSDw4y4LTbQuEiXAjhP8HMdd6sU"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Work Showcase -->
+<section class="py-section-desktop px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<span class="inline-block px-3 py-1 bg-tertiary-container text-on-tertiary-container rounded-full text-label-md font-label-md mb-4 uppercase tracking-wider">Work Showcase</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Case Studios &amp; Our Expertise</h2>
+</div>
+<button class="flex items-center gap-2 text-tertiary font-label-md text-label-md hover:gap-4 transition-all">
+                    See all <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="group relative h-[450px] rounded-xl overflow-hidden ambient-card">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A sleek dark-themed mobile application mockup for a financial technology dashboard. The UI features high-contrast white text, vibrant indigo accents, and clean data visualizations. The overall atmosphere is professional, secure, and technologically advanced, set against a minimal studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKhT93ksbOLAKquKT1D2HFjC4nZCqxC6LZiK54-DFb-p-Cfl-ZBZ7GM61xVf813jXUGnujJbaxdrFUsX4j38fozUCZvNPap_FTizio1iu2wS8MSMnCD52v8OJijC3gv2C7_DE75Fi5RxYALJ9P3szS28pS0BxLqAkXc6ahxvqqIwU63wpjEhy8XZGn47Z1Z_sRnVNuSbnpfunI7yuYeMx6hWNHeTTAO2VBlBr7e4xDO01FnCiWg4bt1Wrp4X9RR0bjbaVxSvOjm70"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/90 via-transparent to-transparent flex flex-col justify-end p-8">
+<span class="text-on-tertiary/70 text-label-md mb-2">Fintech</span>
+<h3 class="text-on-primary font-headline-sm text-headline-sm mb-4">Lumina Banking App</h3>
+<div class="flex justify-between items-center">
+<span class="text-tertiary-fixed font-bold">+140% User Growth</span>
+<span class="material-symbols-outlined text-on-primary">north_east</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group relative h-[450px] rounded-xl overflow-hidden ambient-card">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A clean, high-end e-commerce web interface for a luxury furniture brand. The design uses generous whitespace, a sophisticated serif font for headings, and a soft lavender-tinted background. High-resolution product photography is the centerpiece, creating an airy and premium shopping experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxLP3CvwfEc6__g1AJaJ7vlJri8_NuXTNiZ_t6g8rWKCinj-F2eNgRoU9-czdXxxmKAT2H-vXuEqyt5X34XPHx29-ysrDMcTzG6YGJBcsbTJ_6xdMgoD5XztQOCdKo6uCWM71JXPUwwIvvrjLCE6mTGSCuR6pWFAnwPdWkPl_Kj2QiNOxOWrdaBp_xCIryrax7Snq7A15BoNBlytlSdz44Zt-c5ZYQwpiL7vl2DKL0zB3V9T0NnqR6DmBX60IVldXK1REHIDmPuFE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/90 via-transparent to-transparent flex flex-col justify-end p-8">
+<span class="text-on-tertiary/70 text-label-md mb-2">E-Commerce</span>
+<h3 class="text-on-primary font-headline-sm text-headline-sm mb-4">Nordic Minimalist</h3>
+<div class="flex justify-between items-center">
+<span class="text-tertiary-fixed font-bold">2.4M Revenue Scaled</span>
+<span class="material-symbols-outlined text-on-primary">north_east</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group relative h-[450px] rounded-xl overflow-hidden ambient-card">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A complex healthcare analytics dashboard showing real-time patient data and AI-driven insights. The interface is clean and trustworthy, utilizing a palette of soft blues and lavenders on a white background. Icons are minimal and structural, emphasizing clarity and professional stability for enterprise use." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUBm9VYVWotQWDgRQczDxhQYckD7ej_FrkoL9_FnU7j68GXDVRtCOPBqFPUi8SQbkUNB0tiAxQrhLfN6PF5GbrhtP47KPoce5BkycjV4Lthbi7xFrxVll1RiGDZWDzQHjGyGDbHPag8JqqNtkWQVXbpcgGM6NQGoaPzbVB2j6UzbTnaH97JXruTIgfXSqpsQbHNJ5Isw9RWEP4zj1Hp-T87XBrlbVskwII9c81bVQTtT176IbDYdongohVuqCrvIdlWBgsG1BYgUE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/90 via-transparent to-transparent flex flex-col justify-end p-8">
+<span class="text-on-tertiary/70 text-label-md mb-2">Healthcare</span>
+<h3 class="text-on-primary font-headline-sm text-headline-sm mb-4">Pulse Analytics</h3>
+<div class="flex justify-between items-center">
+<span class="text-tertiary-fixed font-bold">99.9% Data Accuracy</span>
+<span class="material-symbols-outlined text-on-primary">north_east</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-desktop bg-surface-container-low px-margin-mobile md:px-margin-desktop">
+<div class="max-w-[1280px] mx-auto text-center mb-section-mobile">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Explore our Services</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                    Transforming complex business challenges into seamless digital experiences through specialized expertise.
+                </p>
+</div>
+<div class="max-w-[1280px] mx-auto grid md:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="bg-surface p-10 rounded-xl border border-surface-variant ambient-card group">
+<div class="w-14 h-14 bg-primary-container rounded-lg flex items-center justify-center mb-8 text-on-tertiary-container">
+<span class="material-symbols-outlined text-[32px]">terminal</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Custom Software Development</h3>
+<p class="text-on-surface-variant mb-8">Build robust, scalable software solutions tailored to your unique operational requirements.</p>
+<a class="inline-flex items-center gap-2 text-tertiary font-label-md text-label-md group-hover:gap-4 transition-all" href="#">
+                        + Explore service
+                    </a>
+</div>
+<!-- Card 2 (Featured) -->
+<div class="bg-on-background p-10 rounded-xl shadow-2xl transform scale-105 z-10 group">
+<div class="w-14 h-14 bg-tertiary rounded-lg flex items-center justify-center mb-8 text-on-tertiary">
+<span class="material-symbols-outlined text-[32px]">draw</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4 text-on-primary">UI/UX Design</h3>
+<p class="text-surface-variant/70 mb-8">Craft intuitive, engaging interfaces that delight users and drive meaningful business conversion.</p>
+<a class="inline-flex items-center gap-2 text-tertiary-fixed font-label-md text-label-md group-hover:gap-4 transition-all" href="#">
+                        + Explore service
+                    </a>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface p-10 rounded-xl border border-surface-variant ambient-card group">
+<div class="w-14 h-14 bg-primary-container rounded-lg flex items-center justify-center mb-8 text-on-tertiary-container">
+<span class="material-symbols-outlined text-[32px]">devices</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4">Web &amp; Mobile App Development</h3>
+<p class="text-on-surface-variant mb-8">Develop high-performance web and mobile apps optimized for speed and user accessibility.</p>
+<a class="inline-flex items-center gap-2 text-tertiary font-label-md text-label-md group-hover:gap-4 transition-all" href="#">
+                        + Explore service
+                    </a>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-section-desktop px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto text-center">
+<h2 class="font-label-md text-label-md text-tertiary uppercase tracking-[0.2em] mb-16">Trusted by startups &amp; enterprises</h2>
+<div class="grid md:grid-cols-3 gap-12 items-center">
+<div class="flex flex-col items-center">
+<span class="font-display-lg text-display-lg text-on-surface mb-2">95%</span>
+<span class="font-label-md text-label-md text-tertiary">Client Satisfaction</span>
+</div>
+<div class="hidden md:block w-px h-24 bg-outline-variant mx-auto"></div>
+<div class="flex flex-col items-center">
+<span class="font-display-lg text-display-lg text-on-surface mb-2">200+</span>
+<span class="font-label-md text-label-md text-tertiary">Projects Delivered</span>
+</div>
+<div class="hidden md:block w-px h-24 bg-outline-variant mx-auto"></div>
+<div class="flex flex-col items-center">
+<span class="font-display-lg text-display-lg text-on-surface mb-2">15K+</span>
+<span class="font-label-md text-label-md text-tertiary">Revenue Raised</span>
+</div>
+</div>
+</section>
+<!-- Team Section -->
+<section class="py-section-desktop px-margin-mobile md:px-margin-desktop bg-surface-container-lowest">
+<div class="max-w-[1280px] mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-on-surface">Meet Our Team</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Member 1 -->
+<div class="bg-surface p-6 rounded-xl border border-surface-variant ambient-card text-center group">
+<div class="relative w-32 h-32 mx-auto mb-6">
+<div class="absolute inset-0 bg-tertiary-container rounded-full scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<img alt="Alex Rivera" class="relative w-full h-full object-cover rounded-full z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbfxN3laXhbbwVjlVgtsuzabFOyY_cBdDtJdnIW_W9dgDPbALqOKuAi42TUrvu4VyB0cFDNG1lxtt_XDwtRU5Npa4dE9HVZ-4iPKygVXGTJ8kbsSPIAEoFfv7QN-kmiblU1DnUXy_rPahxYSyphHKUGbmBjT4Ia4C8Dv7M1sFU5tBvpL6v7-1cmTm3gBwh_57iYf4jKu271AaqjsO2G6UiARovcUTFzPNZMiMDP9Dsc2rCXyduaJ806XiSr2s18LcZR1XS82jS6XY"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">Alex Rivera</h4>
+<p class="text-on-surface-variant text-body-md mb-3">Full Stack Developer</p>
+<div class="inline-block px-3 py-1 bg-surface-variant rounded-full text-label-md font-label-md text-on-surface-variant mb-4">6 years exp</div>
+<div class="flex justify-center gap-4 text-outline group-hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined cursor-pointer">link</span>
+<span class="material-symbols-outlined cursor-pointer">code</span>
+</div>
+</div>
+<!-- Member 2 -->
+<div class="bg-surface p-6 rounded-xl border border-surface-variant ambient-card text-center group">
+<div class="relative w-32 h-32 mx-auto mb-6">
+<div class="absolute inset-0 bg-tertiary-container rounded-full scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<img alt="Sarah Chen" class="relative w-full h-full object-cover rounded-full z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBT2U88IErZ8rl7diZ-_uoQSAi7jZCurfZdh1s6nOLSndjTqIiEnD8DkUmLCPZ2EBPeoV--h2LhUm9RVyHSAWisAmEJC79OS1vcm5IuL2rIfEgc2VEG9APjFug6zfH374dKn3X7ppc-p1nUfPz4FJPKeq6d979SssEyQap14B2d_dCo4QiZgKqHPMFgANruuynsnUJFiFJDxUSlW37LLyvQewDGV9UgbVlOxYhx7RibA9Xi0alEa2z8pXKwuqvrsDfbBrqWJ2w3LU"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">Sarah Chen</h4>
+<p class="text-on-surface-variant text-body-md mb-3">UI/UX Designer</p>
+<div class="inline-block px-3 py-1 bg-surface-variant rounded-full text-label-md font-label-md text-on-surface-variant mb-4">5 years exp</div>
+<div class="flex justify-center gap-4 text-outline group-hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined cursor-pointer">link</span>
+<span class="material-symbols-outlined cursor-pointer">palette</span>
+</div>
+</div>
+<!-- Member 3 -->
+<div class="bg-surface p-6 rounded-xl border border-surface-variant ambient-card text-center group">
+<div class="relative w-32 h-32 mx-auto mb-6">
+<div class="absolute inset-0 bg-tertiary-container rounded-full scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<img alt="Jordan Smith" class="relative w-full h-full object-cover rounded-full z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxLn9RJPGzr86HN1j-GCIrubffezz3SSHbbQMgm3NcWavK4bTOgawTR4aL4E_TwTfLplhUowDcxbW9nhOZPLzb4wWJTYXESVp7wqCLOGsO2D8z3hPXLkyprFT4zKmmofNVoEM-1uohcXn7l83nHDlOQYN2mdTh9Y_4L982LCWhQ5kbzJuSZIpVkMMrM2IX4oXo7DnfvtePDQKXGSQFncCsJABY4d-1Id7Sr9QZQmKO_P_dQPSMS2egHzAItrTej6PGx7tRvpDnrj0"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">Jordan Smith</h4>
+<p class="text-on-surface-variant text-body-md mb-3">Mobile Developer</p>
+<div class="inline-block px-3 py-1 bg-surface-variant rounded-full text-label-md font-label-md text-on-surface-variant mb-4">4 years exp</div>
+<div class="flex justify-center gap-4 text-outline group-hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined cursor-pointer">link</span>
+<span class="material-symbols-outlined cursor-pointer">smartphone</span>
+</div>
+</div>
+<!-- Member 4 -->
+<div class="bg-surface p-6 rounded-xl border border-surface-variant ambient-card text-center group">
+<div class="relative w-32 h-32 mx-auto mb-6">
+<div class="absolute inset-0 bg-tertiary-container rounded-full scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+<img alt="Taylor Reed" class="relative w-full h-full object-cover rounded-full z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3o3v0BkRZlTOrUtrTzPaywTju4DHe-guZmJEySMgChP73n6OHPiN4CX39b-GEQj9QZ2Q3CS1A-hjF4ylv-rChh2kELGt9hD9olSy_KYIspU2wfoSpFhrTDYhuqfcIV_exdmYsXfy06_uynmsSUNlFoZTF-he6n-cup2v1fl7HCkyfijrTLMXuqljDMxx5_Nc5whNcRsx9QpJRJbt0G1G_7wqkTGTSaOY33BekBO6QjvzSEwVt5pBNt4GTPGrnh3C8KY56z7c00R0"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mb-1">Taylor Reed</h4>
+<p class="text-on-surface-variant text-body-md mb-3">DevOps Engineer</p>
+<div class="inline-block px-3 py-1 bg-surface-variant rounded-full text-label-md font-label-md text-on-surface-variant mb-4">7 years exp</div>
+<div class="flex justify-center gap-4 text-outline group-hover:text-tertiary transition-colors">
+<span class="material-symbols-outlined cursor-pointer">link</span>
+<span class="material-symbols-outlined cursor-pointer">cloud</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-section-desktop px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto">
+<div class="mb-16">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Reviews that speak volume</h2>
+<p class="text-on-surface-variant font-body-md">Trusted by innovators globally.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-8 mb-12">
+<div class="bg-primary-container p-12 rounded-xl flex flex-col justify-between">
+<span class="text-display-lg text-tertiary font-bold leading-none mb-8">8x</span>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-primary-container mb-8">"The team at Aura Agency didn't just build our app; they redesigned our entire business logic for scale. We saw an 8x increase in user retention within months."</p>
+<h5 class="font-label-md text-label-md text-on-surface">Mark Thompson, CEO at TechFlow</h5>
+</div>
+</div>
+<div class="bg-on-background p-12 rounded-xl text-on-primary flex flex-col justify-between">
+<div class="flex items-center gap-4 mb-8">
+<img class="w-16 h-16 rounded-full border-2 border-tertiary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOOHWTZ5conpgBfeb0_EieQBngFAloWP58Nn2bIRC_MiwAaX3I-HgHC78UHTT2D5EJLeznu6Ox9A0AHGOa40Hg1SpAZLlhxAuLV1goyHJ7VDY3d3RAvxpkbOe3aF91e2UhJI6v-iOMyae6Y5i4nCSiD9rG-6mLMmyzV217d38kOiiBuMJBKER5M828kmar7sh2xvTrlpeUgGkGNmZuPYa7svEuzzNtqzUnT4gO7l_jDTcKbarOEsQO9rCBxU2q_O8CWxnBTf10zSI"/>
+<div>
+<h5 class="font-label-md text-label-md">Elena Rodriguez</h5>
+<p class="text-surface-variant/60 text-body-md">Product VP, GlobalLogix</p>
+</div>
+</div>
+<p class="font-headline-sm text-headline-sm italic">"Precision in every pixel is not just a slogan; it's their reality. The interface they crafted for us is the most praised feature of our entire ecosystem."</p>
+</div>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-outline-variant">
+<div class="flex items-center gap-6 mb-4 md:mb-0">
+<div class="flex text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">1500+ satisfied clients worldwide</span>
+</div>
+<a class="text-tertiary font-label-md text-label-md underline decoration-2 underline-offset-4" href="#">View all reviews</a>
+</div>
+</section>
+<!-- CTA Banner -->
+<section class="mx-margin-mobile md:mx-margin-desktop my-section-desktop rounded-3xl bg-on-background overflow-hidden relative group">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-tertiary/20 via-transparent to-transparent"></div>
+<div class="px-10 py-20 md:p-24 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md text-on-primary max-w-2xl leading-tight">
+                    Ready to Take Your Business to the Next Level with Powerful IT Solutions? ←
+                </h2>
+<button class="whitespace-nowrap bg-surface-container-lowest text-on-background px-10 py-5 rounded-xl font-label-md text-label-md hover:bg-tertiary-container transition-all shadow-xl active:scale-95">
+                    Get a Free Consultation
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full bg-on-background text-on-primary px-margin-mobile md:px-margin-desktop py-section-desktop flex flex-col">
+<div class="max-w-[1280px] mx-auto w-full grid grid-cols-1 md:grid-cols-5 gap-12 mb-section-mobile">
+<!-- Brand Column -->
+<div class="col-span-1">
+<div class="font-headline-sm text-headline-sm font-bold text-surface-bright mb-6">AURA</div>
+<p class="text-surface-variant/60 font-body-md mb-8">Designing the future, one pixel at a time. Precision meets passion.</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-surface-variant/60 hover:text-tertiary transition-colors cursor-pointer">language</span>
+<span class="material-symbols-outlined text-surface-variant/60 hover:text-tertiary transition-colors cursor-pointer">terminal</span>
+<span class="material-symbols-outlined text-surface-variant/60 hover:text-tertiary transition-colors cursor-pointer">alternate_email</span>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h6 class="font-label-md text-label-md mb-6 uppercase tracking-widest text-on-primary">Agency</h6>
+<ul class="space-y-4">
+<li><a class="text-surface-variant/60 font-label-md text-label-md hover:text-tertiary transition-colors" href="#">Home</a></li>
+<li><a class="text-surface-variant/60 font-label-md text-label-md hover:text-tertiary transition-colors" href="#">Services</a></li>
+<li><a class="text-surface-variant/60 font-label-md text-label-md hover:text-tertiary transition-colors" href="#">Portfolio</a></li>
+<li><a class="text-surface-variant/60 font-label-md text-label-md hover:text-tertiary transition-colors" href="#">About</a></li>
+<li><a class="text-surface-variant/60 font-label-md text-label-md hover:text-tertiary transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<!-- Support -->
+<div>
+<h6 class="font-label-md text-label-md mb-6 uppercase tracking-widest text-on-primary">Account</h6>
+<ul class="space-y-4">
+<li><a class="text-surface-variant/60 font-label-md text-label-md hover:text-tertiary transition-colors" href="#">Support Center</a></li>
+<li><a class="text-surface-variant/60 font-label-md text-label-md hover:text-tertiary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-surface-variant/60 font-label-md text-label-md hover:text-tertiary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-surface-variant/60 font-label-md text-label-md hover:text-tertiary transition-colors" href="#">Billing</a></li>
+</ul>
+</div>
+<!-- Detailed Services -->
+<div>
+<h6 class="font-label-md text-label-md mb-6 uppercase tracking-widest text-on-primary">Capabilities</h6>
+<ul class="space-y-4">
+<li><a class="text-surface-variant/60 font-label-md text-label-md hover:text-tertiary transition-colors" href="#">Web Development</a></li>
+<li><a class="text-surface-variant/60 font-label-md text-label-md hover:text-tertiary transition-colors" href="#">Mobile Engineering</a></li>
+<li><a class="text-surface-variant/60 font-label-md text-label-md hover:text-tertiary transition-colors" href="#">Cloud Solutions</a></li>
+<li><a class="text-surface-variant/60 font-label-md text-label-md hover:text-tertiary transition-colors" href="#">Product Strategy</a></li>
+</ul>
+</div>
+<!-- Contact -->
+<div>
+<h6 class="font-label-md text-label-md mb-6 uppercase tracking-widest text-on-primary">Contact</h6>
+<p class="text-surface-variant/60 font-body-md mb-4">123 Innovation Way<br/>San Francisco, CA 94103</p>
+<p class="text-surface-variant/60 font-body-md">hello@aura-agency.com<br/>+1 (555) 000-1234</p>
+</div>
+</div>
+<div class="pt-12 border-t border-surface-variant/10 text-center text-surface-variant/40 font-label-md text-label-md">
+            © 2024 Aura Agency. Precision in Every Pixel.
+        </div>
+</footer>
+<script>
+        // Micro-interactions and parallax effect for hero
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.ambient-card');
+            const x = (window.innerWidth / 2 - e.pageX) / 50;
+            const y = (window.innerHeight / 2 - e.pageY) / 50;
+            
+            cards.forEach(card => {
+                if (card.matches(':hover')) {
+                   card.style.transform = `translateY(-8px) rotateX(${y}deg) rotateY(${-x}deg)`;
+                }
+            });
+        });
+    </script>
+</body></html>
