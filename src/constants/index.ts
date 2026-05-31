@@ -168,12 +168,11 @@ export const TEAM: TeamMemberItem[] = [
     name: "Sachin Bharbey",
     role: "Lead Fullstack & Mobile App Engineer",
     bio: "Custom mobile apps with React Native, high-performance web frontends, backend APIs, and database structures.",
-    avatar:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuBbfxN3laXhbbwVjlVgtsuzabFOyY_cBdDtJdnIW_W9dgDPbALqOKuAi42TUrvu4VyB0cFDNG1lxtt_XDwtRU5Npa4dE9HVZ-4iPKygVXGTJ8kbsSPIAEoFfv7QN-kmiblU1DnUXy_rPahxYSyphHKUGbmBjT4Ia4C8Dv7M1sFU5tBvpL6v7-1cmTm3gBwh_57iYf4jKu271AaqjsO2G6UiARovcUTFzPNZMiMDP9Dsc2rCXyduaJ806XiSr2s18LcZR1XS82jS6XY",
+    avatar: "/images/sachin_bharbey.jpg",
     badge: "Fullstack & App Dev",
     links: {
-      github: "#",
-      linkedin: "#",
+      github: "https://github.com/NodePulse",
+      linkedin: "https://www.linkedin.com/in/sachin-bharbey/",
       resume: "/resumes/Sachin_Bharbey_Resume.pdf",
     },
   },

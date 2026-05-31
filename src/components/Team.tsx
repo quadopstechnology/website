@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import { TEAM, TeamMemberItem } from "@/src/constants";
+import Link from "next/link";
 
 // Dynamically import ResumeViewer to avoid canvas & window SSR problems
 const ResumeViewer = dynamic(() => import("./ResumeViewer"), {
@@ -103,8 +104,9 @@ export default function Team() {
                   <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-outline-variant/40 group-hover:border-transparent transition-all duration-300 bg-surface">
                     <img
                       alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-500 scale-160 group-hover:scale-190"
                       src={member.avatar}
+                      style={{ objectPosition: "center" }}
                     />
                   </div>
                 </div>
@@ -152,7 +154,7 @@ export default function Team() {
 
                 <div className="flex justify-center gap-3">
                   {member.links.github && (
-                    <a
+                    <Link
                       href={member.links.github}
                       className="w-8 h-8 rounded-full bg-surface-container/60 hover:bg-on-background hover:text-on-primary flex items-center justify-center text-on-surface-variant transition-colors border border-outline-variant/10"
                       title="GitHub Profile"
@@ -160,18 +162,19 @@ export default function Team() {
                       <span className="material-symbols-outlined text-[16px]">
                         code
                       </span>
-                    </a>
+                    </Link>
                   )}
                   {member.links.linkedin && (
-                    <a
+                    <Link
                       href={member.links.linkedin}
                       className="w-8 h-8 rounded-full bg-surface-container/60 hover:bg-primary hover:text-on-primary flex items-center justify-center text-on-surface-variant transition-colors border border-outline-variant/10"
                       title="LinkedIn Profile"
+                      target="_blank"
                     >
                       <span className="material-symbols-outlined text-[16px]">
                         link
                       </span>
-                    </a>
+                    </Link>
                   )}
                 </div>
               </div>
