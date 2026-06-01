@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { SITE_METADATA } from "@/src/constants";
 
 const NAV_LINKS = [
@@ -63,12 +64,14 @@ export default function Header() {
   return (
     <header className="fixed top-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-[1280px] left-1/2 -translate-x-1/2 glass-nav rounded-b-2xl mt-0 md:mt-2">
       <div className="flex items-center gap-2.5">
-        <img
+        <Image
           src="/aarvi_solutions_logo.png"
-          alt="Aarvi Solutions Logo"
+          alt="QuadOps Logo"
+          width={32}
+          height={32}
           className="w-8 h-8 object-contain rounded-lg shadow-sm"
         />
-        <span className="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">
+        <span className="text-headline-sm font-extrabold tracking-tight bg-clip-text text-transparent bg-linear-to-r from-gray-400 to-orange-400 font-exo2 transition-colors duration-300 hover:from-orange-400 hover:to-gray-400">
           {SITE_METADATA.name}
         </span>
       </div>

@@ -1,4 +1,5 @@
 import { SITE_METADATA } from "@/src/constants";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,10 +8,14 @@ export default function Footer() {
         {/* Brand Column */}
         <div className="col-span-1 space-y-6">
           <div className="flex items-center gap-2.5">
-            <img
+            <Image
               src="/aarvi_solutions_logo.png"
-              alt="Aarvi Solutions Logo"
+              alt="QuadOps Logo"
+              width={100}
+              height={100}
               className="w-8 h-8 object-contain rounded-lg shadow-sm"
+              loading="lazy"
+              quality={90}
             />
             <span className="font-headline-sm text-headline-sm font-bold text-surface-bright tracking-tight">
               {SITE_METADATA.name}
