@@ -104,9 +104,9 @@ export default function Team() {
                   <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-outline-variant/40 group-hover:border-transparent transition-all duration-300 bg-surface">
                     <img
                       alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-500 scale-160 group-hover:scale-190"
+                      className={`w-full h-full object-cover transition-transform duration-500 ${index === 0 ? "scale-160" : ""} group-hover:scale-190 ${index === 3 ? "-translate-x-1.5" : index === 0 ? "translate-x-1.5 translate-y-3" : ""}`}
                       src={member.avatar}
-                      style={{ objectPosition: "center" }}
+                      style={{}}
                     />
                   </div>
                 </div>
