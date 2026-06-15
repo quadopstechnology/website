@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Exo_2 } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const exo2 = Exo_2({
+  variable: "--font-exo2",
   subsets: ["latin"],
   display: "swap",
 });
@@ -20,7 +26,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth h-full`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${exo2.variable} scroll-smooth h-full`}
+    >
       <head>
         <link
           rel="stylesheet"

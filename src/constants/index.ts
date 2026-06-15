@@ -203,11 +203,10 @@ export const TEAM: TeamMemberItem[] = [
     },
   },
   {
-    name: "Aashu Sindhu",
+    name: "Ashu Sindhu",
     role: "SEO & Growth Specialist",
     bio: "Search engines keyword planning, PageSpeed optimizations, metadata structure setups, and core web vitals auditing.",
-    avatar:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuA3o3v0BkRZlTOrUtrTzPaywTju4DHe-guZmJEySMgChP73n6OHPiN4CX39b-GEQj9QZ2Q3CS1A-hjF4ylv-rChh2kELGt9hD9olSy_KYIspU2wfoSpFhrTDYhuqfcIV_exdmYsXfy06_uynmsSUNlFoZTF-he6n-cup2v1fl7HCkyfijrTLMXuqljDMxx5_Nc5whNcRsx9QpJRJbt0G1G_7wqkTGTSaOY33BekBO6QjvzSEwVt5pBNt4GTPGrnh3C8KY56z7c00R0",
+    avatar: "/images/ashu_sindhu.jpg",
     badge: "SEO & Growth",
     links: {
       resume: "/resumes/aashu_sindhu_resume.pdf",
